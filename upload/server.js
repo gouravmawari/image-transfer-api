@@ -4,11 +4,7 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 const User = require("./model.js");
 const path = require("path");
-// let x = Math.random() * 10;
-// let code = x.toString();
-// const filename = user.id;
-// const filePath = path.join(__dirname, 'uploads', fileName);
-// app.use(express.static(path.join(__dirname, "uploads")));
+
 app.use(express.static(path.join(__dirname, "space")));
 
 app.use(express.json());
@@ -51,7 +47,7 @@ app.post("/send",upload,async(req,res)=>{
 })
 
 
-// const path = require("path");
+
 app.get("/receive",async(req,res)=>{
     const {username,password} = req.body;
     try{
@@ -75,20 +71,3 @@ mongoose.connect(dbURI ,{useNewUrlParser : true , useUnifiedTopology: true})
         console.log("server is created")
     })})
 .catch((err)=>console.log(err))                     
-
-
-
-
-
-
-
-
-
-
-// const deletedocument = async(user._id)=>{
-//     try{
-//         const result = await User.deleteOne({user._id})
-//     }
-//     catch(err){
-//         console.log(err)
-//     }
